@@ -21,8 +21,8 @@ C_FLAGS += -Wpointer-arith -Wformat=2 -Wlogical-op
 #CFLAGS += -Wno-unused-variable -Wno-unused-parameter -Wno-unused
 
 C_FLAGS += -O2
-# C_FLAGS += -std=c99
-C_FLAGS += -std=c11
+C_FLAGS += -std=c99
+# C_FLAGS += -std=c11
 C_FLAGS += -march=native
 
 ifdef COMPILE_WINDOWS
@@ -43,6 +43,18 @@ ifdef COMPILE_WINDOWS
 	# LIBS += -lglu32
 endif
 ifdef COMPILE_LINUX
+	C_FLAGS += -lSDL2
+	LIBS += -pg -g
+	LIBS += -lm
+	# LIBS += -lvorbisfile
+	# LIBS += -lopenal
+	LIBS += -lSDL2
+	# LIBS += -lGLEW
+	# LIBS += -lglfw
+	# LIBS += -lGL
+	# LIBS += -lGLU
+endif
+ifdef COMPILE_MAC
 	C_FLAGS += -lSDL2
 	LIBS += -pg -g
 	LIBS += -lm
