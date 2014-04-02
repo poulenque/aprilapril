@@ -65,6 +65,8 @@ void render() {
 	for(int i=0;i<100;i++){
 		double a1=i;
 		double a2=.05*(100-i);
+		if(i%2)
+			a2*=10;
 		double b=a1+a2;
 		rects_x[i] = (a1*rects[i].x + a2*(x_mouse-(i/2.)*8.))/b ;
 		rects_y[i] = (a1*rects[i].y + a2*(y_mouse-(i/2.)*8.))/b ;
